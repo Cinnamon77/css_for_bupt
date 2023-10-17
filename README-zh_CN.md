@@ -42,7 +42,7 @@
 - 获取项目代码
 
 ```bash
-git clone https://github.com/CharleeWa/vue3-vant-mobile.git
+git clone https://codeup.aliyun.com/650be6e238d942876f45bceb/vue3-vant-mobile-main.git
 ```
 
 - 安装依赖
