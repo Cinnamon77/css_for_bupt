@@ -30,7 +30,7 @@ const majors = schoolStore.majors
 
 <style scoped>
 .school-introduce-container {
-  /* background-color:white; */
+  /* background-color:#885FFF; */
 }
 
 .school {
