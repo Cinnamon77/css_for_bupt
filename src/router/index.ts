@@ -14,23 +14,23 @@ const router = createRouter({
   routes,
 })
 
-router.beforeEach((_to, _from, next) => {
-  NProgress.start() // start progress bar
-  const userStore = useUserStore()
-  const { loginState } = storeToRefs(userStore)
-  // 没有登陆之前默认登陆状态是false
-  if (!loginState.value)
-    // 从localStore加载存储的状态
-    userStore.init()
-  // 如果不是主页并且没有登陆
-  if (_to.name !== 'main' && !loginState.value) {
-    if (_to.name === 'login')
-      next()
-    else
-      router.push({ name: 'login', query: { path: _to.path } })
-  }
-  else { next() }
-})
+// router.beforeEach((_to, _from, next) => {
+//   NProgress.start() // start progress bar
+//   const userStore = useUserStore()
+//   const { loginState } = storeToRefs(userStore)
+//   // 没有登陆之前默认登陆状态是false
+//   if (!loginState.value)
+//     // 从localStore加载存储的状态
+//     userStore.init()
+//   // 如果不是主页并且没有登陆
+//   if (_to.name !== 'main' && !loginState.value) {
+//     if (_to.name === 'login')
+//       next()
+//     else
+//       router.push({ name: 'login', query: { path: _to.path } })
+//   }
+//   else { next() }
+// })
 
 router.afterEach(() => {
   NProgress.done() // finish progress bar
